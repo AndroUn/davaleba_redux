@@ -13,7 +13,7 @@ export const todoReducer = (state = initialState, action) => {
         case TODO_ACTIONS.DELETE_TODO:
             return { todoList: [...state.todoList.filter((task) => task.title !== action.payload)]}
         case TODO_ACTIONS.FINISH_TODO:
-            return { todoList: [...state.todoList.filter((task) => task.title !== action.payload), action.payload2]} 
+            return { todoList: [...state.todoList]}
         default:
           return state
     }

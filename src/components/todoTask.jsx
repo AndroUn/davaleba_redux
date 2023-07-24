@@ -12,7 +12,7 @@ const TodoTask = ({index, title, name, isComplited, remove, finish}) => {
             </div>
             <div className={styles.buttonWrapper}>
                 <button onClick={()=> remove(title)} className={styles.buttonItem}>x</button>
-                <button onClick={()=> finish(isComplited)} className={styles.buttonItem}>✓</button>
+                <button onClick={()=> finish(title, name, isComplited)} className={styles.buttonItem}>✓</button>
             </div>
         </div>
     )

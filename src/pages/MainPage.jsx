@@ -10,22 +10,22 @@ const MainPage = () => {
         dispatch(removeTodoAction(task))
     }
 
-    const finishDeal = (title, status) => {        
-        dispatch(finishTodoAction(title, status))
+    const finishDeal = (status, name, task) => { 
+        const newTask = {
+            title: task,
+            name: name,
+            isComplited: status,
+        }     
+
+        dispatch(finishTodoAction(task, newTask))
     }
 
 
-    const undoneTasks = todoList.map((item) => item.isComplited === false)
-
-    const doneTasks = todoList.map((item) => item.isComplited === true)
 
     return(
         <div>
-            {undoneTasks.map(t => 
+            {todoList.map(t => 
                 <TodoTask key={t.index} index={t.index} title={t.title} name={t.name} isComplited={t.isComplited} remove={removeDeal} finish={finishDeal}/>
-            )}
-            {doneTasks.map(t => 
-                <doneTasks key={t.index} index={t.index} title={t.title} name={t.name} isComplited={t.isComplited} remove={removeDeal}/>
             )}
         </div>
     )

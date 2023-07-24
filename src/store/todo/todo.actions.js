@@ -11,8 +11,7 @@ export const removeTodoAction = (payload) => ({
 })
 
 
-export const finishTodoAction = (payload, payload2) => ({
+export const finishTodoAction = (payload) => ({
     type: TODO_ACTIONS.FINISH_TODO,
-    payload,
-    payload2
+    payload
 })
